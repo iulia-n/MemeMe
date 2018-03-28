@@ -18,6 +18,7 @@ class ViewController: UIViewController {
         NSAttributedStringKey.foregroundColor.rawValue: UIColor.white,
         NSAttributedStringKey.font.rawValue: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
         NSAttributedStringKey.strokeWidth.rawValue: 5.0]
+    let memeTextFieldDelegate = MemeTextFieldDelegate()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,10 +26,12 @@ class ViewController: UIViewController {
         topTextField.text = "TOP"
         topTextField.defaultTextAttributes = memeTextAttributes
         topTextField.textAlignment = .center
+        topTextField.delegate = memeTextFieldDelegate
         
         bottomTextField.text = "BOTTOM"
         bottomTextField.defaultTextAttributes = memeTextAttributes
         bottomTextField.textAlignment = .center
+        bottomTextField.delegate = memeTextFieldDelegate
     }
 
     override func didReceiveMemoryWarning() {
