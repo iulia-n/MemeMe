@@ -45,22 +45,22 @@
                                 </items>
                             </navigationBar>
                             <textField opaque="NO" contentMode="center" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="waC-cK-3IL">
-                                <rect key="frame" x="10" y="94" width="355" height="30"/>
+                                <rect key="frame" x="10" y="94" width="355" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="VZf-hm-MBQ"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="FWI-k4-5dm" userLabel="height = 40"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VaT-iH-6dP">
-                                <rect key="frame" x="10" y="563" width="355" height="30"/>
+                                <rect key="frame" x="10" y="553" width="355" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="bzi-fl-GJA"/>
+                                    <constraint firstAttribute="height" constant="40" id="AD4-y9-cDK"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -85,6 +85,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="bottomTextField" destination="VaT-iH-6dP" id="BSc-n6-Hbf"/>
+                        <outlet property="topTextField" destination="waC-cK-3IL" id="FhS-7p-ZXd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
