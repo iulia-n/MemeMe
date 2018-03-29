@@ -17,8 +17,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5uL-sX-Nn4">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5uL-sX-Nn4">
                                 <rect key="frame" x="0.0" y="64" width="375" height="559"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="559" id="hkN-Uf-mFC" userLabel="height = Safe Area.Height"/>
                                 </constraints>
@@ -30,8 +31,16 @@
                                 </constraints>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="ntH-F5-cjM"/>
-                                    <barButtonItem title="Camera" id="qmI-tp-3Um"/>
-                                    <barButtonItem title="Album" id="2Qn-nU-cVW"/>
+                                    <barButtonItem title="Camera" id="qmI-tp-3Um">
+                                        <connections>
+                                            <action selector="pickImageFromCamera:" destination="BYZ-38-t0r" id="aQO-Pc-nwf"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Album" id="2Qn-nU-cVW">
+                                        <connections>
+                                            <action selector="pickImageFromAlbum:" destination="BYZ-38-t0r" id="xtS-ma-Ueo"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="KGD-V7-GdE"/>
                                 </items>
                             </toolbar>
@@ -49,6 +58,7 @@
                             </navigationBar>
                             <textField opaque="NO" contentMode="center" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="waC-cK-3IL">
                                 <rect key="frame" x="10" y="94" width="355" height="40"/>
+                                <color key="backgroundColor" red="0.5" green="0.0" blue="0.5" alpha="0.0" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="FWI-k4-5dm" userLabel="height = 40"/>
                                 </constraints>
@@ -58,6 +68,7 @@
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VaT-iH-6dP">
                                 <rect key="frame" x="10" y="553" width="355" height="40"/>
+                                <color key="backgroundColor" red="0.5" green="0.0" blue="0.5" alpha="0.0" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="AD4-y9-cDK"/>
                                 </constraints>
@@ -89,6 +100,8 @@
                     </view>
                     <connections>
                         <outlet property="bottomTextField" destination="VaT-iH-6dP" id="BSc-n6-Hbf"/>
+                        <outlet property="cameraButton" destination="qmI-tp-3Um" id="h4d-8z-qmR"/>
+                        <outlet property="imageView" destination="5uL-sX-Nn4" id="KHg-yq-fwu"/>
                         <outlet property="topTextField" destination="waC-cK-3IL" id="FhS-7p-ZXd"/>
                     </connections>
                 </viewController>
