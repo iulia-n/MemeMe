@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Access required to save memed image</string>
 	<key>NSCameraUsageDescription</key>
 	<string>Access required to take a new photo to use for the memed image</string>
 	<key>NSPhotoLibraryUsageDescription</key>

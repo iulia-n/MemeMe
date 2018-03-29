@@ -51,7 +51,11 @@
                                 </constraints>
                                 <items>
                                     <navigationItem id="K4A-6D-uXd">
-                                        <barButtonItem key="leftBarButtonItem" title="Share" id="5oX-Xm-9Nb"/>
+                                        <barButtonItem key="leftBarButtonItem" title="Share" id="5oX-Xm-9Nb">
+                                            <connections>
+                                                <action selector="shareMemedImage:" destination="BYZ-38-t0r" id="XcS-JB-EKq"/>
+                                            </connections>
+                                        </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Cancel" id="a5R-Vu-ydI"/>
                                     </navigationItem>
                                 </items>
@@ -102,6 +106,9 @@
                         <outlet property="bottomTextField" destination="VaT-iH-6dP" id="BSc-n6-Hbf"/>
                         <outlet property="cameraButton" destination="qmI-tp-3Um" id="h4d-8z-qmR"/>
                         <outlet property="imageView" destination="5uL-sX-Nn4" id="KHg-yq-fwu"/>
+                        <outlet property="navbar" destination="SEt-Zn-1Eo" id="eTi-AM-17T"/>
+                        <outlet property="shareButton" destination="5oX-Xm-9Nb" id="uOT-Bo-rbT"/>
+                        <outlet property="toolbar" destination="eK3-ep-7OJ" id="USk-9r-L9w"/>
                         <outlet property="topTextField" destination="waC-cK-3IL" id="FhS-7p-ZXd"/>
                     </connections>
                 </viewController>

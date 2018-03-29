@@ -14,6 +14,16 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var bottomTextField: UITextField!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var cameraButton: UIBarButtonItem!
+    @IBOutlet weak var navbar: UINavigationBar!
+    @IBOutlet weak var toolbar: UIToolbar!
+    @IBOutlet weak var shareButton: UIBarButtonItem!
+    
+    struct MemeModel {
+        let topText: String
+        let bottomText: String
+        let originalImage: UIImage
+        let memedImage: UIImage
+    }
     
     let memeTextAttributes:[String: Any] = [
         NSAttributedStringKey.strokeColor.rawValue: UIColor.black,
@@ -37,6 +47,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         // Disable the camera button if source is not available
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
+        
+        // Share button should be disabled until a picture is selected
+        shareButton.isEnabled = false
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -98,6 +111,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             imageView.image = image
+            shareButton.isEnabled = true
         }
         
         dismiss(animated: true, completion: nil)
@@ -105,6 +119,40 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
+    }
+    @IBAction func shareMemedImage(_ sender: Any) {
+        // Show Activity View
+        let image = generateMemedImage()
+        let controller = UIActivityViewController(activityItems: [image], applicationActivities: nil)
+        controller.completionWithItemsHandler = { activity, success, items, error in
+            self.save(image)
+        }
+        self.present(controller, animated: true, completion: nil)
+        
+    }
+    
+    func generateMemedImage() -> UIImage {
+        
+        // Hide toolbar and navbar
+        toolbar.isHidden = true
+        navbar.isHidden = true
+        
+        // Render view to an image
+        UIGraphicsBeginImageContext(self.view.frame.size)
+        view.drawHierarchy(in: self.view.frame, afterScreenUpdates: true)
+        let memedImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+        
+        // Show toolbar and navbar
+        toolbar.isHidden = false
+        navbar.isHidden = false
+        
+        return memedImage
+    }
+    
+    func save(_ memedImage: UIImage) {
+        // Create the meme
+        let meme = MemeModel(topText: topTextField.text!, bottomText: bottomTextField.text!, originalImage: imageView.image!, memedImage: memedImage)
     }
     
     override func didReceiveMemoryWarning() {
