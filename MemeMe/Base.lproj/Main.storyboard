@@ -31,11 +31,12 @@
                                 </constraints>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="ntH-F5-cjM"/>
-                                    <barButtonItem title="Camera" id="qmI-tp-3Um">
+                                    <barButtonItem systemItem="camera" id="qmI-tp-3Um">
                                         <connections>
                                             <action selector="pickImageFromCamera:" destination="BYZ-38-t0r" id="aQO-Pc-nwf"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="uMj-bD-sZ7"/>
                                     <barButtonItem title="Album" id="2Qn-nU-cVW">
                                         <connections>
                                             <action selector="pickImageFromAlbum:" destination="BYZ-38-t0r" id="xtS-ma-Ueo"/>
@@ -51,7 +52,7 @@
                                 </constraints>
                                 <items>
                                     <navigationItem id="K4A-6D-uXd">
-                                        <barButtonItem key="leftBarButtonItem" title="Share" id="5oX-Xm-9Nb">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="action" id="5oX-Xm-9Nb">
                                             <connections>
                                                 <action selector="shareMemedImage:" destination="BYZ-38-t0r" id="XcS-JB-EKq"/>
                                             </connections>
