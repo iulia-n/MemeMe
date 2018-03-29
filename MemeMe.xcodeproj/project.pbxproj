@@ -13,6 +13,7 @@
 		A277352A206BD8F300BD87E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2773529206BD8F300BD87E6 /* Assets.xcassets */; };
 		A277352D206BD8F300BD87E6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A277352B206BD8F300BD87E6 /* LaunchScreen.storyboard */; };
 		A2773535206BEEA500BD87E6 /* MemeTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2773534206BEEA500BD87E6 /* MemeTextFieldDelegate.swift */; };
+		A2773537206D5A3200BD87E6 /* UIImagePickerControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2773536206D5A3200BD87E6 /* UIImagePickerControllerExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		A277352C206BD8F300BD87E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A277352E206BD8F300BD87E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A2773534206BEEA500BD87E6 /* MemeTextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeTextFieldDelegate.swift; sourceTree = "<group>"; };
+		A2773536206D5A3200BD87E6 /* UIImagePickerControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImagePickerControllerExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			children = (
 				A2773522206BD8F300BD87E6 /* AppDelegate.swift */,
 				A2773524206BD8F300BD87E6 /* ViewController.swift */,
+				A2773536206D5A3200BD87E6 /* UIImagePickerControllerExtension.swift */,
 				A2773526206BD8F300BD87E6 /* Main.storyboard */,
 				A2773534206BEEA500BD87E6 /* MemeTextFieldDelegate.swift */,
 				A2773529206BD8F300BD87E6 /* Assets.xcassets */,
@@ -140,6 +143,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A2773525206BD8F300BD87E6 /* ViewController.swift in Sources */,
+				A2773537206D5A3200BD87E6 /* UIImagePickerControllerExtension.swift in Sources */,
 				A2773535206BEEA500BD87E6 /* MemeTextFieldDelegate.swift in Sources */,
 				A2773523206BD8F300BD87E6 /* AppDelegate.swift in Sources */,
 			);
