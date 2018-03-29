@@ -57,7 +57,11 @@
                                                 <action selector="shareMemedImage:" destination="BYZ-38-t0r" id="XcS-JB-EKq"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="Cancel" id="a5R-Vu-ydI"/>
+                                        <barButtonItem key="rightBarButtonItem" title="Cancel" id="a5R-Vu-ydI">
+                                            <connections>
+                                                <action selector="cancel:" destination="BYZ-38-t0r" id="AM2-95-POh"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>

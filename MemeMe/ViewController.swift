@@ -35,12 +35,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        topTextField.text = "TOP"
         topTextField.defaultTextAttributes = memeTextAttributes
         topTextField.textAlignment = .center
         topTextField.delegate = memeTextFieldDelegate
         
-        bottomTextField.text = "BOTTOM"
         bottomTextField.defaultTextAttributes = memeTextAttributes
         bottomTextField.textAlignment = .center
         bottomTextField.delegate = memeTextFieldDelegate
@@ -48,8 +46,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         // Disable the camera button if source is not available
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
         
-        // Share button should be disabled until a picture is selected
-        shareButton.isEnabled = false
+        setDefaultValues()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -153,6 +150,19 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func save(_ memedImage: UIImage) {
         // Create the meme
         let meme = MemeModel(topText: topTextField.text!, bottomText: bottomTextField.text!, originalImage: imageView.image!, memedImage: memedImage)
+    }
+    
+    @IBAction func cancel(_ sender: Any) {
+        setDefaultValues()
+    }
+    
+    func setDefaultValues() {
+        topTextField.text = "TOP"
+        bottomTextField.text = "BOTTOM"
+        imageView.image = nil
+        
+        // Share button should be disabled until a picture is selected
+        shareButton.isEnabled = false
     }
     
     override func didReceiveMemoryWarning() {
