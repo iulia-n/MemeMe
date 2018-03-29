@@ -117,6 +117,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
     }
+    
     @IBAction func shareMemedImage(_ sender: Any) {
         // Show Activity View
         let image = generateMemedImage()
@@ -164,12 +165,4 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         // Share button should be disabled until a picture is selected
         shareButton.isEnabled = false
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
 }
-
