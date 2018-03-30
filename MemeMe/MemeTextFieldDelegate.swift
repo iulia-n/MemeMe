@@ -10,14 +10,14 @@ import Foundation
 import UIKit
 
 class MemeTextFieldDelegate: NSObject, UITextFieldDelegate {
-    
+
     func textFieldDidBeginEditing(_ textField: UITextField) {
         // Delete default text when editing begins
         if textField.text == "TOP" || textField.text == "BOTTOM" {
             textField.text = ""
         }
     }
-    
+
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         // Hide keyboard on return
         textField.resignFirstResponder()
