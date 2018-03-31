@@ -125,8 +125,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
     func generateMemedImage() -> UIImage {
         // Hide toolbar and navbar
-        toolbar.isHidden = true
-        navbar.isHidden = true
+        configureBars(hidden: true)
 
         // Render view to an image
         UIGraphicsBeginImageContext(self.view.frame.size)
@@ -135,8 +134,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         UIGraphicsEndImageContext()
 
         // Show toolbar and navbar
-        toolbar.isHidden = false
-        navbar.isHidden = false
+        configureBars(hidden: false)
         
         return memedImage
     }
@@ -164,5 +162,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         textField.defaultTextAttributes = memeTextAttributes
         textField.textAlignment = .center
         textField.delegate = memeTextFieldDelegate
+    }
+    
+    func configureBars(hidden: Bool) {
+        toolbar.isHidden = hidden
+        navbar.isHidden = hidden
     }
 }
