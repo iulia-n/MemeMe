@@ -35,13 +35,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        topTextField.defaultTextAttributes = memeTextAttributes
-        topTextField.textAlignment = .center
-        topTextField.delegate = memeTextFieldDelegate
-
-        bottomTextField.defaultTextAttributes = memeTextAttributes
-        bottomTextField.textAlignment = .center
-        bottomTextField.delegate = memeTextFieldDelegate
+        // Configure top and bottom text fields
+        configure(textField: topTextField)
+        configure(textField: bottomTextField)
 
         // Disable the camera button if source is not available
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
@@ -159,5 +155,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
         // Share button should be disabled until a picture is selected
         shareButton.isEnabled = false
+    }
+    
+    func configure(textField: UITextField){
+        // Configure meme text field: set delegate, default attributes
+        textField.defaultTextAttributes = memeTextAttributes
+        textField.textAlignment = .center
+        textField.delegate = memeTextFieldDelegate
     }
 }
