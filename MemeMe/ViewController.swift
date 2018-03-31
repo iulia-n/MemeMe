@@ -18,7 +18,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var toolbar: UIToolbar!
     @IBOutlet weak var shareButton: UIBarButtonItem!
 
-    struct MemeModel {
+    struct Meme {
         let topText: String
         let bottomText: String
         let originalImage: UIImage
@@ -145,7 +145,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
     func save(_ memedImage: UIImage) {
         // Create the meme
-        let meme = MemeModel(topText: topTextField.text!, bottomText: bottomTextField.text!, originalImage: imageView.image!, memedImage: memedImage)
+        let meme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, originalImage: imageView.image!, memedImage: memedImage)
     }
 
     @IBAction func cancel(_ sender: Any) {
